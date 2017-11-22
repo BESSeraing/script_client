@@ -26,6 +26,7 @@ var addition = parseInt(myInteger)+myFloat;
 console.log('addition result : '+addition);
 
 var testCondition = 1;
+
 var testCondition2 = 1;
 var testCondition3 = "1";
 
