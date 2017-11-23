@@ -3,6 +3,10 @@ var myFloat = 2.5;
 var myString = "une chaine de charactères";
 var myBoolean = true;
 var myArray = [1,2,3];
+var myObject = {
+    prop1: 'Ma première propriété'
+};
+
 
 console.log('Ceci est mon premier message dans la console');
 
@@ -12,6 +16,23 @@ console.warn("type de myFloat : "+typeof myFloat);
 console.error("type de myString : "+typeof myString);
 console.debug("type de myBoolean : "+typeof myBoolean);
 console.log("type de myArray : "+typeof myArray);
+console.log("exemple de join : "+myArray.join(', '));
+
+
+
+myArray.push(50);
+console.log('Acces à ma prop1 : ' + myObject.prop1); //Première écriture pour accéder aux propriétés d'un tableau
+myObject.prop2 = 'MA deuxieme propriété';
+console.log('Acces à ma prop2 : ' + myObject.prop2);
+
+//Parcourir un objet litéral
+for (var propName in myObject){
+    console.log(propName+' = '+ myObject[propName]);//Deuxieme écriture pour accéder aux propriétés d'un tableau
+}
+
+
+
+
 
 
 
