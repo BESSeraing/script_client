@@ -17,9 +17,11 @@ main.appendChild(myA);
 var myNewA = document.getElementById('myA');
 myNewA.innerHTML += " fkgd";
 
-var myNewA2 = myNewA;
 
-myNewA2.innerHTML += " dhgsd";
+//
+// var myNewA2 = myNewA;
+//
+// myNewA2.innerHTML += " dhgsd";
 
 console.log(myA.innerHTML);
 

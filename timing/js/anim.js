@@ -12,6 +12,7 @@ setInterval(clock,15);
 
 function clock(){
     if (!paused){
+        totalIntervals ++;
         moveBall();
         chrono();
     }
@@ -29,7 +30,7 @@ function moveBall(){
         direction *= -1;
     }
     pos+= (speed * direction);
-    totalIntervals ++;
+
     // console.log("totalintervals : "+totalIntervals);
     ball.style.left = pos + "px";
 
