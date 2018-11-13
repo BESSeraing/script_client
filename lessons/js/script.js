@@ -1,43 +1,56 @@
-var myString = "Jonathan";
-myString = "";
+//Arrays to string to Array
+var students = ['Eric','Marco',"Sébastien"];
+log(students);
+// L'argument de join est ce qui se trouvera entre chaque élément du tableau
+var studentsJoined = students.join('-');
+log(studentsJoined);
 
 
-var studentsNumber = "15.684651";
-
-var myNumber = 30.3486584532;
-myNumber = myNumber *2;
-
-var isBoolean = false;
-isBoolean = true;
-
-var myArray = ["pomme","poire","fraise"];
-myArray.push("carotte");
-
-var myObject = {
-    fruit: "pomme",
-    couleur: "vert",
-    poids: 100
-};
-
-// console.log(parseFloat(studentsNumber));
-//
-//
-// console.log("mon string est "+myString);
-// console.log("mon string fait "+myString.length+' charactères');
-// console.log("mon string enb maj est "+myString.toUpperCase());
-// console.log("mon number est "+myNumber.toPrecision(6));
-// console.log("la valeur de l'index 1 de mon tableau est "+myArray[1]);
-// console.log("la longueur de mon tableau est "+myArray.length);
-// console.log("la propriété couleur de mon object est "+myObject.couleur);
+var tags = "dev,js,web";
+log(tags);
+var tagsSplitted = tags.split(',');
+log(tagsSplitted);
 
 
-if (myString === "toto"){
-    console.log("Condition ok");
+
+//Initiation aux function
+
+log("hello devs");
+
+divideLog(846515,13);
+divideLog(458,98);
+divideLog(458,0);
+
+var myDivideResult = divide(13,2,2);
+log(myDivideResult);
+
+function divide(devided,devider,precision){
+    if (typeof precision === "undefined"){
+        precision = 100;
+    }
+    if (precision > 100){
+        log("divide function warning : precision doit être plus petit ou égal à 100");
+        precision = 100;
+    }
+
+    if (devider === 0){
+        return null;
+    }
+
+    var result = devided/devider;
+    result = result.toFixed(precision);
+
+    return result;
 }
-else if(myString == "Jonathan"){
-    console.log("2eme condition ok");
-}
-else{
-    console.log("aucune condition ok");
+
+function divideLog(devided,devider){
+    var result = divide(devided,devider);
+    log("résultat de la division : "+result);
 }
 
+
+function log(message){
+    if (typeof console !== "undefined"){
+        console.log(typeof message + " : "+message);
+    }
+}
