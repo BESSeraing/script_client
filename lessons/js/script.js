@@ -1,56 +1,26 @@
-//Arrays to string to Array
-var students = ['Eric','Marco',"Sébastien"];
-log(students);
-// L'argument de join est ce qui se trouvera entre chaque élément du tableau
-var studentsJoined = students.join('-');
-log(studentsJoined);
+var leftDiv = document.getElementById('left');
+var liElements = document.getElementsByTagName('li');
 
+var myLink = document.querySelector('#right p>a');
+myLink.setAttribute("href","https://bes-webdeveloper-seraing.be");
+var myLinkCollection = document.querySelectorAll('#right p>a');
 
-var tags = "dev,js,web";
-log(tags);
-var tagsSplitted = tags.split(',');
-log(tagsSplitted);
-
-
-
-//Initiation aux function
-
-log("hello devs");
-
-divideLog(846515,13);
-divideLog(458,98);
-divideLog(458,0);
-
-var myDivideResult = divide(13,2,2);
-log(myDivideResult);
-
-function divide(devided,devider,precision){
-    if (typeof precision === "undefined"){
-        precision = 100;
-    }
-    if (precision > 100){
-        log("divide function warning : precision doit être plus petit ou égal à 100");
-        precision = 100;
-    }
-
-    if (devider === 0){
-        return null;
-    }
-
-    var result = devided/devider;
-    result = result.toFixed(precision);
-
-    return result;
+leftDiv.classList.add("monHyperClass");
+if (leftDiv.classList.contains("superClass"))
+{
+    leftDiv.classList.remove("superClass");
+    leftDiv.classList.add("myExtraClass");
 }
 
-function divideLog(devided,devider){
-    var result = divide(devided,devider);
-    log("résultat de la division : "+result);
-}
-
-
-function log(message){
-    if (typeof console !== "undefined"){
-        console.log(typeof message + " : "+message);
-    }
-}
+console.log(leftDiv.innerHTML);
+console.log(leftDiv.textContent);
+leftDiv.innerHTML = '<span class="bg-warning">CONTENU CENSURE</span>';
+// console.log(leftDiv.innerHTML);
+//
+// console.log(leftDiv.getAttribute('class'));
+// console.log(leftDiv.className);
+// console.log(leftDiv.classList);
+// console.log(liElements);
+// console.log(myLink.getAttribute('href'));
+// console.log(leftDiv.href);
+// console.log(myLinkCollection);

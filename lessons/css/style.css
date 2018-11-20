@@ -1,0 +1,8 @@
+#wrapper {
+    width:1420px; /* Pour la taille du rectangle il nous faut la largeur de celui ci */
+    height:1500px;/* Et la hauteur */
+    margin:40px auto; /* Pour créer une marge*/
+    background:#522B72; /* Pour définir la couleur de l'arrière plan*/
+}
+
+nav a{color:#999900;}
