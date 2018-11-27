@@ -1,26 +1,26 @@
-var leftDiv = document.getElementById('left');
-var liElements = document.getElementsByTagName('li');
+//Exemple reférence vs passage par valeur.
 
-var myLink = document.querySelector('#right p>a');
-myLink.setAttribute("href","https://bes-webdeveloper-seraing.be");
-var myLinkCollection = document.querySelectorAll('#right p>a');
+var nick1 = 'Clarisse';
+var nick2 = nick1;
 
-leftDiv.classList.add("monHyperClass");
-if (leftDiv.classList.contains("superClass"))
-{
-    leftDiv.classList.remove("superClass");
-    leftDiv.classList.add("myExtraClass");
+log("nick1",nick1);
+log("nick2",nick2);
+
+nick1 = "Zoé";
+
+log("nick1",nick1);
+log("nick2",nick2);
+
+
+
+var h1 = document.getElementById("title");
+var h1bis = h1;
+
+h1.textContent = "New TEXT content";
+
+log('h1bis.textContent',h1bis.textContent);
+
+
+function log(varName,value){
+    console.log('la variable '+varName+' contient la valeur : '+value);
 }
-
-console.log(leftDiv.innerHTML);
-console.log(leftDiv.textContent);
-leftDiv.innerHTML = '<span class="bg-warning">CONTENU CENSURE</span>';
-// console.log(leftDiv.innerHTML);
-//
-// console.log(leftDiv.getAttribute('class'));
-// console.log(leftDiv.className);
-// console.log(leftDiv.classList);
-// console.log(liElements);
-// console.log(myLink.getAttribute('href'));
-// console.log(leftDiv.href);
-// console.log(myLinkCollection);
