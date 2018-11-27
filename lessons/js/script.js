@@ -1,24 +1,31 @@
-//Exemple reférence vs passage par valeur.
 
-var nick1 = 'Clarisse';
-var nick2 = nick1;
+//Clone
+var hr = document.createElement('hr');
+var hr2 = hr.cloneNode(false);
 
-log("nick1",nick1);
-log("nick2",nick2);
+var myP = document.getElementById("myP");
+var paragraph2 = myP.cloneNode(true);
 
-nick1 = "Zoé";
+document.getElementById('headerId').appendChild(paragraph2);
+// document.getElementById('headerId').appendChild(hr);
+myP.appendChild(hr2);
+// paragraph2.setAttribute('id','paragraph2');
+paragraph2.id = 'paragraph2';
 
-log("nick1",nick1);
-log("nick2",nick2);
+//REplace
+
+var links = document.querySelectorAll("a");
+
+var newLabel = document.createTextNode("et un hyperlien");
+
+for(var i=0;i<links.length;i++){
+    links[i].replaceChild(newLabel,links[i].firstChild);
+}
+
+var firstLink = document.querySelector('a');
+firstLink.parentNode.removeChild(firstLink);
 
 
-
-var h1 = document.getElementById("title");
-var h1bis = h1;
-
-h1.textContent = "New TEXT content";
-
-log('h1bis.textContent',h1bis.textContent);
 
 
 function log(varName,value){
