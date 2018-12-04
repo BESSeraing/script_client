@@ -1,15 +1,30 @@
 //KeyboardsEvent
-var speed = 10;
+var speed = 1;
+var directionX =0;
+var directionY =1;
+
 document.getElementById("ptitBoulRouge").style.left = "10px";
-document.getElementById("ptitBoulRouge").style.bottom = "50px";
+document.getElementById("ptitBoulRouge").style.top = "50px";
 document.addEventListener('keydown',keyDown);
+
+var interval = setInterval(clock,1000/60);
+
+function clock(){
+    console.log('interval');
+
+    var posX = parseInt(document.getElementById("ptitBoulRouge").style.left)+directionX;
+    var posY = parseInt(document.getElementById("ptitBoulRouge").style.top)+directionY;
+
+    document.getElementById("ptitBoulRouge").style.left = posX+"px";
+    document.getElementById("ptitBoulRouge").style.top = posY+"px";
+}
+
+
+
 
 function keyDown(e){
     console.log("code touche down : "+e.keyCode);
 
-
-    var directionX =0;
-    var directionY =0;
     switch (e.keyCode){
         case 37:
             directionX -= speed;
@@ -18,18 +33,14 @@ function keyDown(e){
             directionX += speed;
             break;
         case 40:
-            directionY -= speed;
+            directionY += speed;
             break;
         case 38:
-            directionY += speed;
+            directionY -= speed;
             break;
     }
 
-    var posX = parseInt(document.getElementById("ptitBoulRouge").style.left)+directionX;
-    var posY = parseInt(document.getElementById("ptitBoulRouge").style.bottom)+directionY;
 
-    document.getElementById("ptitBoulRouge").style.left = posX+"px";
-    document.getElementById("ptitBoulRouge").style.bottom = posY+"px";
 }
 
 //Bubble vs capture
