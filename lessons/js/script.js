@@ -1,31 +1,64 @@
+//KeyboardsEvent
+var speed = 10;
+document.getElementById("ptitBoulRouge").style.left = "10px";
+document.getElementById("ptitBoulRouge").style.bottom = "50px";
+document.addEventListener('keydown',keyDown);
 
-//Clone
-var hr = document.createElement('hr');
-var hr2 = hr.cloneNode(false);
+function keyDown(e){
+    console.log("code touche down : "+e.keyCode);
 
-var myP = document.getElementById("myP");
-var paragraph2 = myP.cloneNode(true);
 
-document.getElementById('headerId').appendChild(paragraph2);
-// document.getElementById('headerId').appendChild(hr);
-myP.appendChild(hr2);
-// paragraph2.setAttribute('id','paragraph2');
-paragraph2.id = 'paragraph2';
+    var directionX =0;
+    var directionY =0;
+    switch (e.keyCode){
+        case 37:
+            directionX -= speed;
+            break;
+        case 39:
+            directionX += speed;
+            break;
+        case 40:
+            directionY -= speed;
+            break;
+        case 38:
+            directionY += speed;
+            break;
+    }
 
-//REplace
+    var posX = parseInt(document.getElementById("ptitBoulRouge").style.left)+directionX;
+    var posY = parseInt(document.getElementById("ptitBoulRouge").style.bottom)+directionY;
 
-var links = document.querySelectorAll("a");
-
-var newLabel = document.createTextNode("et un hyperlien");
-
-for(var i=0;i<links.length;i++){
-    links[i].replaceChild(newLabel,links[i].firstChild);
+    document.getElementById("ptitBoulRouge").style.left = posX+"px";
+    document.getElementById("ptitBoulRouge").style.bottom = posY+"px";
 }
 
-var firstLink = document.querySelector('a');
-firstLink.parentNode.removeChild(firstLink);
+//Bubble vs capture
+document.getElementById("container").addEventListener("click",clickedContainer);
+document.getElementById("red").addEventListener("click",clickedRed);
 
 
+function clickedRed(e){
+    console.log('RED CLICKED');
+    console.log(e.type);
+    e.preventDefault();
+
+}
+
+function clickedContainer(e){
+    console.log('Container CLICKED');
+}
+
+//Basic event
+// document.getElementById('myA').addEventListener("click",clicked);
+//
+//
+//
+//
+// function clicked(e){
+//     // e.preventDefault();
+//     alert("CLIIIIIIIICK");
+//     // console.log(e);
+// }
 
 
 function log(varName,value){
