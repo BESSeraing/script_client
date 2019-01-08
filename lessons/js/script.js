@@ -40,7 +40,7 @@ function styleIt(){
 }
 
 function fadeExemple(){
-    $('.fadeIn').fadeIn(10000,function(){
+    $('.fadeIn').fadeIn(1000,function(){
         $(this).slideUp(1000);
     });
 }
