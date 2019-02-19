@@ -1,0 +1,29 @@
+<classe>
+    <eleves>
+        <eleve>
+            <nom>Le nom de l'élève</nom>
+            <prenom>Benjamin</prenom>
+            <email>yoyo@gluglu.be</email>
+        </eleve>
+        <eleve>
+            <nom>Le nom de l'élève</nom>
+            <prenom>Benjamin</prenom>
+            <email>yoyo@gluglu.be</email>
+        </eleve>
+        <eleve>
+            <nom>Le nom de l'élève</nom>
+            <prenom>Benjamin</prenom>
+            <email>yoyo@gluglu.be</email>
+        </eleve>
+        <eleve>
+            <nom>Le nom de l'élève</nom>
+            <prenom>Benjamin</prenom>
+            <email>yoyo@gluglu.be</email>
+        </eleve>
+        <eleve>
+            <nom>Le nom de l'élève</nom>
+            <prenom>Benjamin</prenom>
+            <email>yoyo@gluglu.be</email>
+        </eleve>
+    </eleves>
+</classe>
